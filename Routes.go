@@ -1,7 +1,9 @@
 package main
 
 import (
-	"MyDailySpendGoal/Profile"
+	dailyspend "MyDailySpendGoal/DailySpend"
+	profile "MyDailySpendGoal/Profile"
+	todo "MyDailySpendGoal/TODO"
 	"net/http"
 )
 
@@ -19,28 +21,46 @@ var routes = Routes{
 		"Index",
 		"GET",
 		"/",
-		Index,
+		todo.Index,
 	},
 	Route{
 		"TodoIndex",
 		"GET",
 		"/todos",
-		TodoIndex,
+		todo.TodoIndex,
 	},
 	Route{
 		"TodoShow",
 		"GET",
 		"/todos/{todoId}",
-		TodoShow,
+		todo.TodoShow,
 	}, Route{
 		"TodoCreate",
 		"POST",
 		"/todos",
-		TodoCreate,
+		todo.TodoCreate,
 	}, Route{
 		"Index",
 		"get",
 		"/profile",
-		Profile.Index,
+		profile.Index,
+	},
+	Route{
+		"Index",
+		"post",
+		"/profile",
+		profile.Create,
+	},
+	Route{
+		"Get",
+		"get",
+		"/profile/Get",
+		profile.Get,
+	},
+	Route{
+		"Get",
+		"get",
+		"/DailySpend/Get",
+		dailyspend.Get,
 	},
 }

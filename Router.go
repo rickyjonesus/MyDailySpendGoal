@@ -1,6 +1,7 @@
 package main
 
 import (
+	logging "MyDailySpendGoal/Logging"
 	"net/http"
 
 	"github.com/gorilla/mux"
@@ -12,7 +13,7 @@ func NewRouter() *mux.Router {
 
 		var handler http.Handler
 
-		handler = Logger(route.HandlerFunc, route.Name)
+		handler = logging.Logger(route.HandlerFunc, route.Name)
 
 		router.
 			Methods(route.Method).
