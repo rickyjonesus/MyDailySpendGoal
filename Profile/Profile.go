@@ -15,5 +15,7 @@ type Profile struct {
 	EmailAddress        string
 	PayFrequency        PayFrequency
 	PayDays             []int
-	PayPaySpendingMoney int
+	PayPaySpendingMoney int,
+	DailyGoal			decimal
+	
 }
